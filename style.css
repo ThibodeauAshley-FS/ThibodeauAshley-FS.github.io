@@ -1,8 +1,105 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body
-{
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	body
+	{
+		width: 100%;
+		font-family: 'Montserrat', sans-serif;
+		font-family: 'Montserrat Alternates', sans-serif;
+		background-color: #F3F1F8;
+	}
+	#menu
+	{
+		height: 50px;
+		display: flex;
+		flex-direction: row;
+		background-color: #362C85;
+		
+	}
+	header
+	{
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 300;
+		color: white;
+		background-color: #4538AB;
+		height: 400px;	
+		
+	}
 	
-}
+	header a
+	{
+		color: white;
+		font-size: 1em;
+		padding: 1em;
+		text-decoration: none;
+	}
+	header a:hover
+	{
+		color: #d1cfe3;
+	}
+
+	#logo
+	{
+		font-size: 28px;
+		margin: 10px;
+	}
+	
+	#menu_Tags
+	{
+		margin-left: 69%;
+		margin-top: 1%;
+		
+	}
+	#lnkPortfolio
+	{
+		border-right: thin solid white;
+		border-left: thin solid white;
+	}
+	.accent
+	{
+		color: #C5A353;
+	}
+	
+	#imgHead
+	{
+		padding-left: 5%;
+		font-size: 30px;
+	}
+	
+	.hSub
+	{
+		font-weight: 300;
+		margin: 0 63% 0 0;
+		text-align: right;
+	}
+	#hTop
+	{
+		margin-top: 30px;
+		margin-bottom: 10px;
+		font-weight: 400;
+	}
+	#hMid
+	{
+		font-size: 1.2em;
+	}
+	
+	#about
+	{
+		background-color: white;
+	  	position: absolute;
+	  	width: 1100px;
+	  	height: 100px;
+	  	top: 370px;
+	  	left: 0;
+	  	right: 0;
+	  	margin: auto;
+		border: thin solid white;
+		border-radius: 10px;
+		box-shadow: 0px 0px 25px 0px #343434;
+	}
+
+
+
+
+
+
