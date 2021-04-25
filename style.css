@@ -278,6 +278,12 @@ li .icon
   	
 	
 }
+#c_list li a
+{
+	padding: 5% 0;	
+	display: block;
+}
+
 .form{
 	margin: 50px 550px;
 	
