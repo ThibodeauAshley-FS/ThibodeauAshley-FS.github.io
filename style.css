@@ -218,16 +218,47 @@
   flex-basis: 100%;
   flex: 1;
 }
-.imgBox
+#overlay
 {
-	
+	position: absolute;
+	left: 600px;
+	top: 1000px;
+	margin: auto;
+	z-index: 10;
+}
+
+#overlay h1
+{
+	color: black;
+	font-size: 36px;
+}
+.porfolioItem
+{	
+	margin: auto;   	
+}
+
+.imgBox, .porfolioItem
+{
+	object-fit: cover;
+	vertical-align: middle;
 	margin: 15px 0px;
 	height: 200px;
 	width: 300px;
-	border: thin solid #9A98C0;
+	border: thin solid #FFFFFF;
 	border-radius: 10px;
+	opacity: 0.7;
 	background-color: #9A98C0;
 }
+.porfolioItem
+{	
+	margin: auto;
+}
+.imgBox, .porfolioItem:hover
+{
+	opacity: 1;
+}
+
+
 /* Contact section styles*/
 #sectContact
 {
@@ -237,9 +268,17 @@
 	right: 0;
 }
 #contactmap
-{	
+{
+   	-moz-box-shadow:    inset 0 0 30px #000000;
+   	-webkit-box-shadow: inset 0 0 30px #000000;
+  	box-shadow:         inset 0 0 30px #000000;
+	background-image: url("images/Screen Shot 2021-04-18 at 8.12.48 PM.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: 300px;
 	width: 100%;
-	object-fit: cover; 
 	height: 250px;
 	
 }
@@ -247,8 +286,6 @@
 {	
 	background-color: #4538AC;
 	height: 600px;
-	box-shadow: 0px 10px 50px 20px #343434;
-	position: absolute;
 	left: 0;
 	right: 0;
 	
@@ -329,16 +366,22 @@ input#submit
 footer
 {
 	width: 100%;
-	position: absolute;
-	top: 3500px;
+	bottom: 0;
 	justify-content: center;
 	color: #9A98C0;
 	text-align: center;
 	height: 50px;
-	display: flex;
-	flex-direction: row;
 	background-color: #362C85;
+	padding: 0;
+	margin: 0;
 	
+}
+
+footer p
+{
+	justify-content: center;
+	margin: auto;
+	padding: 1%;
 }
 
 
