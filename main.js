@@ -5,7 +5,7 @@ let userResponse;
 if (confirm('Hello! Are you a devloper interested in working with me?')) {
   // Run Game
 	alert('OK Great! Please open your browsers console log to continue...');
-	console.log('Challenge Accepted! To further work with me I ask you play a game');
+	console.log('Challenge Accepted!');
 	userResponse = true;
 } 
 else {
@@ -20,7 +20,6 @@ while(userResponse == true)
             function PrimaryProgram()
             {
 
-                
                 Display.Header("HIGH LOW");
                 Display.Instructions();
 
@@ -37,20 +36,17 @@ while(userResponse == true)
                 //Set Variables for while loop: Count of Guess, User Guess Number
                 let counter = 1;
                 let userGuess = 0;
-
-            /*
-                //RANDOM NUMBER DISPLAY FOR TESTING *** COMMENT OUT ****
-                console.log("Answer Number: " + privateNumber);
-            */  
                  
                     //While Loop for User guess Entry
                     while(userGuess != privateNumber && score > 0)
                     {
+                        let userGuesslet;
+
                         //Subtract Score
                         score -= (100 * counter);
 
                         //Display Count Ask for Guess
-                        let userGuesslet = Display.Divider(prompt('Guess [{counter}]: Please enter a number _'));
+                        Display.Divider(userGuesslet = prompt('Guess [{counter}]: Please enter a number _'));
 
                         //Set & Validate User Guess
                         userGuess = Validation.leteger(userGuesslet);
@@ -70,8 +66,6 @@ while(userResponse == true)
                         //Add count to guess
                         counter ++;
                         
-                            
-
                     }
 
                         //Conditional for Win and Lose
@@ -98,20 +92,12 @@ while(userResponse == true)
             //Ask user for maximum input
             function AskMax()
             {
-                maxlet = Display.Divider(prompt("Maximum Number: _"));
+                Display.Divider(maxlet = prompt("Maximum Number: _"));
                 max = Validation.leteger(maxlet);
+
+                return max;
             }
 
-
-            //Generate a Random Number
-            function RandomNumberGen(maxlet)
-            {
-                random = new Random();
-
-                let number = random.Next(0, max);
-
-                return number;
-            }
 
             //Calculates score on max input
             function ScoreCalc(max)
