@@ -206,6 +206,7 @@
 	width: 100%;
 	margin: 5%;
 	max-height: 700px;
+	overflow: hidden;
 }
 .row {
   display: flex;
