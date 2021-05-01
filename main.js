@@ -7,6 +7,14 @@ if (confirm('Hello! Are you a devloper interested in working with me?')) {
 	alert('OK Great! Please open your browsers console log to continue...');
     userResponse = true;
 	console.log('Challenge Accepted!');
+    PrimaryProgram();
+    var yn = PlayAgain();
+    
+    while(yn == true)
+        {
+            PrimaryProgram();
+            yn = PlayAgain();
+        }
 } 
 else {
   // Do nothing!
@@ -14,10 +22,8 @@ else {
 	userResponse = false
 }
 
-while(userResponse == true)
-{
-    PrimaryProgram();
-}
+
+
 //Class for the Main Program
 function PrimaryProgram()
 {
@@ -48,21 +54,21 @@ function PrimaryProgram()
             score -= (100 * counter);
 
             //Display Count Ask for Guess
-            Divider(userGuesslet = prompt('Guess [{counter}]: Please enter a number _'));
+            Divider(userGuesslet = prompt('Guess ' + counter +': '));
 
             //Set & Validate User Guess
-            userGuess = leteger(userGuesslet);
+            userGuess = ValidateInteger(userGuesslet);
 
                 //Conditionals for High or Low Guess
                 if (userGuess > privateNumber)
                 {
-                    console.log("Sorry," + userGuess + "is too high");
-                    console.log("\r\n Current Score: _" + score);
+                    console.log("Sorry," + userGuess + " is too high");
+                    console.log("\r\n Current Score: " + score);
                 }
                 else if (userGuess < privateNumber)
                 {
-                    console.log("Sorry," + userGuess + "is too low");
-                    console.log("\r\n Current Score: _" + score);
+                    console.log("Sorry," + userGuess + " is too low");
+                    console.log("\r\n Current Score: " + score);
                 }
 
             //Add count to guess
@@ -84,7 +90,7 @@ function PrimaryProgram()
 
 } //= END PRIMARY PROGRAM =======
 
-
+//=========================================================================================================
 // TASKS TO BE PERFORMED 
 //=========================================================================================================
 
@@ -92,9 +98,8 @@ function PrimaryProgram()
 //Ask user for maximum input
 function AskMax()
 {
-    let maxlet = Divider(prompt("Between 0 and __ what would you like to play? (must be higher than 10)"));
-    let max = ValidateInteger(maxlet);
-    max = ValidateGT10(maxlet)
+    let maxlet = prompt("Between 0 and __ what would you like to play? (must be higher than 10)");
+    max = ValidateIntegerMax(maxlet);
 
     return max;
 }
@@ -121,19 +126,20 @@ function ScoreCalc(max)
 function PlayAgain()
 {
     let repeat = true;
+    let inputYN;
 
-    let inputYN = Divider(prompt("Would you like to play again [Y/N]: _"));
-    let yesNo = YesNo(inputYN);
+    Divider(inputYN = prompt("Would you like to play again [Y/N]: _"));
+    var yesNo = YesNo(inputYN);
     
         //Conditional for 
-        if (yesNo.ToUpper() == "Y")
+        if (yesNo == "Y")
         {
             repeat = true;
         }
-        else if (yesNo.ToUpper() == "N")
+        else if (yesNo == "N")
         {
             repeat = false;
-            Task.ExitProgram();
+            ExitProgram();
         }
 
     return repeat;
@@ -155,41 +161,71 @@ function ExitProgram()
 //Class for Validation
 //=========================================================================================================
     //Validated user entered an leteger
+    function ValidateIntegerMax(input)
+    {
+        while(isNaN(input) && input > 10)
+        {
+            if(NaN)
+            {
+                //Display Error message
+                Divider("Sorry! Please enter a vaild number!\r\n");
+                //Renter Input value
+                input = prompt("Please enter a number _");
+
+            }
+            if(input < 10)
+            {
+                //Display Error message
+                Divider("Error: Value less than 10!\r\n");
+                //Renter Input value
+                input = prompt("Please enter a number greater than 10");
+
+            }
+
+        }
+
+        return Number(input);
+    }
     function ValidateInteger(input)
     {
         while(isNaN(input) && input > 0)
         {
-            //Display Error message
-            Divider("Sorry! Please enter a vaild number!\r\n");
-            //Renter Input value
-            input = prompt("Please enter a number _");
+            if(NaN)
+            {
+                //Display Error message
+                Divider("Sorry! Please enter a vaild number!\r\n");
+                //Renter Input value
+                input = prompt("Please enter a number _");
+
+            }
+            if(input < 0)
+            {
+                //Display Error message
+                Divider("Error: Value less than 0!\r\n");
+                //Renter Input value
+                input = prompt("Please enter a number greater than 0");
+
+            }
+
         }
 
-        return input;
+        return Number(input);
     }
 
-    function ValidateGT10(input)
-    {
-        while(input < 10)
-        {
-            //Display Error message
-            Divider("Error: Value less than 10!\r\n");
-            //Renter Input value
-            input = prompt("Please enter a number greater than 10");        }
-    }
 
     //Validate user entered Y or N
     function YesNo(text)
     {
+        let TF;
         
-        while (text.ToUpper() != "Y" && text.ToUpper() != "N")
+        while (text.toUpperCase() != "Y" && text.toUpperCase() != "N")
         {
             //Error Message
             Divider("Sorry! Your entry is invalid! ");
             text = prompt("Would you like to play again [Y/N]: _");
         }
         
-        return text;
+        return text.toUpperCase();
     }
 
 //=========================================================================================================
@@ -234,6 +270,7 @@ function ExitProgram()
         console.log("            "+ hidnum + "is the answer!");
         console.log("          Your final score is: _" + score);
         console.log("\r\n\r\n");
+        console.alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
         
         
             
@@ -249,7 +286,7 @@ function ExitProgram()
         console.log("         !!!YOU LOST!!!");
         console.log("The number was" + rNumber);
         console.log("\r\n\r\n");
-        
+        console.alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
     }
 
 
