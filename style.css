@@ -179,14 +179,21 @@
 #aboutDiv
 {
 	background-color: #4538AC;
-	height: 400px;
+	height: 600px;
 }
 #a_about
 {
 		height: 350px;
-	  	top:1250px;
 	  	left: 0;
 	  	right: 0;
+		background-color: white;
+	  	width: 1100px;
+	  	margin: 100px auto auto auto;
+		border: thin solid white;
+		border-radius: 10px;
+		box-shadow: 0px 0px 25px 0px #343434;
+		
+		justify-content: center;
 }
 #aboutP
 {
@@ -196,16 +203,16 @@
 }
 #sectPortfolio
 {
-	padding: 10%;
-	height: 700px;
-	max-height: 700px;
+	padding: 0;
+	height: 1100px;
+	max-height: 1100px;
 }
 .gallery
 {
 	display: inline-block;
 	width: 100%;
 	margin: 5%;
-	max-height: 700px;
+	max-height: 1000px;
 	overflow: hidden;
 }
 .row {
@@ -222,11 +229,7 @@
   flex-basis: 100%;
   flex: 1;
 }
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
+
 #overlay
 {
 	position: absolute;
@@ -260,10 +263,10 @@
 	border-radius: 10px;
 	object-fit: cover;
 	margin: 15px 0px;
-	max-height: 200px;
-	max-width: 300px;
-	height: 200px;
-	width: 300px;
+	max-height: 300px;
+	max-width: 400px;
+	height: 300px;
+	width: 400px;
 	opacity: 0.7;
 	background-color: #9A98C0;
 }
