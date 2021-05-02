@@ -4,6 +4,15 @@ var modal = document.getElementById("jsModal");
 var mInterest = document.getElementById("btnInterest").onclick = btnInterest;
 var mStartGame = document.getElementById("btnStartGame").onclick = Run;
 var mEnd = document.getElementsByClassName("modClose")[0].addEventListener("click", btnClose);
+var submitForm = document.getElementById("submit").onclick = subForm;
+
+function subForm()
+{
+    var sub = document.getElementById("submit");
+    sub.innerHTML = "Sent!";
+    sub.style.backgroundColor = "#C5A353";
+
+}
 
 function btnClose() {
     modal.style.display = "none";
@@ -23,7 +32,6 @@ function Run()
 {
 
     document.getElementById("btnStartGame").disable;
-    document.getElementById("mainModal").style.backgroundColor = "#888";
 
     console.log('Challenge Accepted!');
     
