@@ -434,6 +434,26 @@ li .icon
 	background-color: #F3F1F8;
 }
 
+.icoText:link {
+	text-decoration: none;
+	color: #000;
+  }
+  
+.icoText:visited {
+	text-decoration: none;
+	color: #000;
+  }
+  
+.icoText:hover {
+	text-decoration: underline;
+	color: #C5A353;
+  }
+  
+.icoText:active {
+	text-decoration: underline;
+	color: #000;
+  }
+
 input#name{
 	padding: 6px;
 }
