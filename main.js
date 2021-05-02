@@ -1,28 +1,41 @@
 // JavaScript Document
 
-let userResponse;
+var modal = document.getElementById("jsModal");
+var mInterest = document.getElementById("btnInterest").onclick = btnInterest;
+var mStartGame = document.getElementById("btnStartGame").onclick = Run;
+var mEnd = document.getElementsByClassName("modClose")[0].addEventListener("click", btnClose);
 
-if (confirm('Hello! Are you a devloper interested in working with me?')) {
-  // Run Game
-	alert('OK Great! Please open your browsers console log to continue...');
-    userResponse = true;
-	console.log('Challenge Accepted!');
-    PrimaryProgram();
-    var yn = PlayAgain();
-    
-    while(yn == true)
-        {
-            PrimaryProgram();
-            yn = PlayAgain();
-        }
-} 
-else {
-  // Do nothing!
-  console.log('User is not interested.');
-	userResponse = false
+function btnClose() {
+    modal.style.display = "none";
 }
 
+function btnInterest() {
+ modal.style.display = "block";
+}
 
+window.onclick = function(event) {
+    if (event.target == modal) {
+      btnClose();
+    }
+}
+
+function Run()
+{
+
+    document.getElementById("btnStartGame").disable;
+    document.getElementById("mainModal").style.backgroundColor = "#888";
+
+    console.log('Challenge Accepted!');
+    
+    var yn = PrimaryProgram();
+    
+    
+    while(yn == true)
+    {
+        PrimaryProgram();
+        yn = PlayAgain();
+    }
+}
 
 //Class for the Main Program
 function PrimaryProgram()
@@ -77,16 +90,26 @@ function PrimaryProgram()
         }
 
             //Conditional for Win and Lose
-            if (userGuess == privateNumber)
+            if ((userGuess == privateNumber) && !((score==0)&&(privateNumber==0)))
             { 
                 //Display Winning message
                 Win(privateNumber, score);
+                alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
+                yn = PlayAgain();
+
             }
             else if (score < 0)
             { 
                 //Display losing message
-                Lose();
+                Lose(privateNumber);
+                alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
+                yn = PlayAgain();
+
+                
             }
+
+
+            return yn;
 
 } //= END PRIMARY PROGRAM =======
 
@@ -98,7 +121,7 @@ function PrimaryProgram()
 //Ask user for maximum input
 function AskMax()
 {
-    let maxlet = prompt("Between 0 and __ what would you like to play? (must be higher than 10)");
+    let maxlet = prompt("what the highest number you want to guess between? (must be higher than 10)");
     max = ValidateIntegerMax(maxlet);
 
     return max;
@@ -270,23 +293,21 @@ function ExitProgram()
         console.log("            "+ hidnum + "is the answer!");
         console.log("          Your final score is: _" + score);
         console.log("\r\n\r\n");
-        console.alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
         
         
             
     }
 
     //Displays losing message
-    function Lose()
+    function Lose(hidnum)
     {
         console.clear();
         console.log("\r\n\r\n");
         console.log("∀ԀOS ∀ԀIԀ ︵╰(°□°)╯︵ ∀ԀIԀ ∀ԀOS\r\n");
         console.log("          !! OH NO !!");
         console.log("         !!!YOU LOST!!!");
-        console.log("The number was" + rNumber);
+        console.log("The number was" + hidnum);
         console.log("\r\n\r\n");
-        console.alert("Whether you won or not it was the attempt that matters! Please contact me at played@Ash1ey.com");
     }
 
 
